@@ -184,28 +184,26 @@ def fetch_book_meta(title: str, author: str) -> dict:
     return result
 
 
-# (base_radius, max_radius) in degrees, keyed by the location string actually
-# used to resolve coordinates (region name if present, else country).
-# - GIANT: vast interior/ocean-buffered countries — generous spread, capped
-#   late enough that groups of ~20-30 books don't pile onto one fixed ring.
-# - India's named states/UTs stay tight (TINY_SPREAD) — we know precisely
-#   which state, so precision matters (e.g. Nagaland shouldn't spill into
-#   Myanmar).
-# - Every other country falls back to MEDIUM_SPREAD: per the user, exact
-#   in-country placement doesn't matter for non-India countries, just that
-#   points stay inside that country's borders with real visual separation.
+# (lat_radius, lon_radius) in degrees, keyed by the location string actually
+# used to resolve coordinates (region name if present, else country) — an
+# ellipse shaped to that country's real geography, not a circle. A circle
+# sized to a country's *tightest* dimension (e.g. USA's ~9° to the Canadian
+# border) wastes most of its actual width and reads as a tight blob stuck
+# to one "common center" instead of spanning the country. Each axis is
+# picked independently: generous where the border is a coastline or a
+# distant frontier, tight only where a real neighboring country is close.
 SPREAD_TIERS = {
-    "USA": (1.2, 5.5),
-    "Russia": (1.4, 6.0),
-    "Canada": (1.4, 6.0),
-    "Australia": (1.2, 5.0),
-    "Brazil": (1.1, 4.5),
-    "China": (1.0, 4.0),
-    "India": (0.9, 3.5),  # country-level fallback only, not the states below
-    "UK": (0.4, 1.6),
-    "Japan": (0.6, 3.2),
-    "Indonesia": (0.5, 2.2),
-    "Mexico": (0.45, 1.3),
+    "USA": (8.5, 19.0),
+    "Russia": (10.0, 30.0),
+    "Canada": (6.5, 25.0),
+    "Australia": (12.0, 18.0),
+    "Brazil": (10.0, 12.0),
+    "China": (8.0, 12.0),
+    "India": (6.0, 7.0),  # country-level fallback only, not the states below
+    "UK": (4.5, 4.0),
+    "Japan": (8.0, 3.0),  # long north-south, narrow east-west
+    "Indonesia": (3.0, 8.0),  # archipelago spread mainly east-west
+    "Mexico": (5.0, 6.5),
 }
 # India's states/UTs vary hugely in real size — West Bengal or Rajasthan
 # can absorb a much wider spread than tiny Delhi or Goa without the points
@@ -215,9 +213,9 @@ INDIA_LARGE_STATES = {
     "Andhra Pradesh/Telangana", "Kerala", "Punjab", "Bihar", "Odisha",
     "Jharkhand", "Kashmir",
 }
-INDIA_LARGE_SPREAD = (0.35, 1.4)
-INDIA_SMALL_SPREAD = (0.2, 0.55)
-MEDIUM_SPREAD = (0.35, 1.3)
+INDIA_LARGE_SPREAD = (1.4, 1.4)
+INDIA_SMALL_SPREAD = (0.55, 0.55)
+MEDIUM_SPREAD = (1.3, 1.3)
 
 
 def spread_for(location_key: str):
@@ -238,29 +236,33 @@ def _deg_dist(lat1, lon1, lat2, lon2, lon_scale):
 
 def jitter_group(base_lat: float, base_lon: float, n: int, location_key: str = ""):
     """Scatter n points around (base_lat, base_lon) with a random (but
-    seeded/deterministic) placement inside a disk of radius max_r, enforcing
-    a minimum distance between every pair — not just neighbors. A regular
-    spiral fills the same disk but reads as a drawn "shape" (a dense core
-    ringed by a perfect circle once its radius caps out) and only spaces
-    consecutive points, not every pair; random rejection sampling looks like
-    an organic scatter and guarantees real separation at moderate zoom."""
+    seeded/deterministic) placement inside an ellipse shaped to the real
+    country, enforcing a minimum distance between every pair — not just
+    neighbors. A regular spiral fills the same area but reads as a drawn
+    "shape" (a dense core ringed by a perfect circle once its radius caps
+    out) and only spaces consecutive points; random rejection sampling
+    looks like an organic scatter, guarantees real separation at moderate
+    zoom, and — using an ellipse instead of a circle — actually spans a
+    large country's real shape instead of clumping around one center."""
     if n == 1:
         return [(base_lat, base_lon)]
-    _, max_r = spread_for(location_key)
+    lat_r, lon_r = spread_for(location_key)
     lon_scale = max(math.cos(math.radians(base_lat)), 0.2)
     rng = random.Random(f"{location_key}|{n}")
 
-    # Roughly the spacing that would tile n points evenly across the disk.
-    min_sep = 0.85 * max_r / math.sqrt(n)
+    # Roughly the spacing that would tile n points evenly across the ellipse.
+    min_sep = 0.85 * math.sqrt(lat_r * lon_r / n)
 
     points = []
     sep = min_sep
     stale = 0
     while len(points) < n:
-        r = max_r * math.sqrt(rng.random())
+        # Uniform point inside the unit disk, then stretched onto the
+        # (lat_r, lon_r) ellipse — each axis in real degrees directly.
+        r = math.sqrt(rng.random())
         theta = rng.random() * 2 * math.pi
-        lat = base_lat + r * math.sin(theta)
-        lon = base_lon + (r * math.cos(theta)) / lon_scale
+        lat = base_lat + r * math.sin(theta) * lat_r
+        lon = base_lon + r * math.cos(theta) * lon_r
         if all(_deg_dist(lat, lon, plat, plon, lon_scale) >= sep for plat, plon in points):
             points.append((lat, lon))
             sep = min_sep
@@ -268,7 +270,7 @@ def jitter_group(base_lat: float, base_lon: float, n: int, location_key: str = "
             continue
         stale += 1
         if stale > 400:
-            sep *= 0.85  # relax if the disk is getting crowded, then keep trying
+            sep *= 0.85  # relax if the ellipse is getting crowded, then keep trying
             stale = 0
 
     return [(round(lat, 4), round(lon, 4)) for lat, lon in points]
