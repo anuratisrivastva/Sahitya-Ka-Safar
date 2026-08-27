@@ -15,6 +15,7 @@ import csv
 import difflib
 import json
 import math
+import random
 import re
 import time
 import urllib.error
@@ -183,47 +184,94 @@ def fetch_book_meta(title: str, author: str) -> dict:
     return result
 
 
-GOLDEN_ANGLE = math.pi * (3 - math.sqrt(5))  # ~137.5°, sunflower phyllotaxis
-
 # (base_radius, max_radius) in degrees, keyed by the location string actually
-# used to resolve coordinates (region name if present, else country). Only
-# countries whose centroid has generous buffer before any border — vast
-# interiors or ocean on most sides — get a wide spread; everything else
-# (small countries, Indian states) stays tight so jittered points can't
-# wander into a neighboring country, e.g. Nagaland spilling into Myanmar.
+# used to resolve coordinates (region name if present, else country).
+# - GIANT: vast interior/ocean-buffered countries — generous spread, capped
+#   late enough that groups of ~20-30 books don't pile onto one fixed ring.
+# - India's named states/UTs stay tight (TINY_SPREAD) — we know precisely
+#   which state, so precision matters (e.g. Nagaland shouldn't spill into
+#   Myanmar).
+# - Every other country falls back to MEDIUM_SPREAD: per the user, exact
+#   in-country placement doesn't matter for non-India countries, just that
+#   points stay inside that country's borders with real visual separation.
 SPREAD_TIERS = {
-    "USA": (0.7, 2.2),
-    "Russia": (0.9, 2.8),
-    "Canada": (0.9, 2.6),
-    "Australia": (0.8, 2.4),
-    "Brazil": (0.7, 2.0),
-    "China": (0.6, 1.8),
-    "India": (0.5, 1.4),  # country-level fallback only, not the states below
-    "UK": (0.3, 0.7),
-    "Japan": (0.4, 1.0),
-    "Indonesia": (0.4, 1.2),
-    "Mexico": (0.4, 1.0),
+    "USA": (1.2, 5.5),
+    "Russia": (1.4, 6.0),
+    "Canada": (1.4, 6.0),
+    "Australia": (1.2, 5.0),
+    "Brazil": (1.1, 4.5),
+    "China": (1.0, 4.0),
+    "India": (0.9, 3.5),  # country-level fallback only, not the states below
+    "UK": (0.4, 1.6),
+    "Japan": (0.6, 3.2),
+    "Indonesia": (0.5, 2.2),
+    "Mexico": (0.45, 1.3),
 }
-DEFAULT_SPREAD = (0.13, 0.35)
+# India's states/UTs vary hugely in real size — West Bengal or Rajasthan
+# can absorb a much wider spread than tiny Delhi or Goa without the points
+# reading as outside the state.
+INDIA_LARGE_STATES = {
+    "West Bengal", "Gujarat", "Karnataka", "Tamil Nadu", "Rajasthan",
+    "Andhra Pradesh/Telangana", "Kerala", "Punjab", "Bihar", "Odisha",
+    "Jharkhand", "Kashmir",
+}
+INDIA_LARGE_SPREAD = (0.35, 1.4)
+INDIA_SMALL_SPREAD = (0.2, 0.55)
+MEDIUM_SPREAD = (0.35, 1.3)
+
+
+def spread_for(location_key: str):
+    if location_key in SPREAD_TIERS:
+        return SPREAD_TIERS[location_key]
+    if location_key in INDIA_LARGE_STATES:
+        return INDIA_LARGE_SPREAD
+    if location_key in INDIA_REGION_COORDS:
+        return INDIA_SMALL_SPREAD
+    return MEDIUM_SPREAD
+
+
+def _deg_dist(lat1, lon1, lat2, lon2, lon_scale):
+    dlat = lat1 - lat2
+    dlon = (lon1 - lon2) * lon_scale
+    return math.hypot(dlat, dlon)
 
 
 def jitter_group(base_lat: float, base_lon: float, n: int, location_key: str = ""):
-    """Spread n points around (base_lat, base_lon) in a sunflower spiral —
-    radius grows with each point so dense clusters (e.g. USA's ~30 books)
-    fan out instead of crowding on a single fixed-radius ring, capped per
-    location so the spread can't cross into a neighboring country/state."""
+    """Scatter n points around (base_lat, base_lon) with a random (but
+    seeded/deterministic) placement inside a disk of radius max_r, enforcing
+    a minimum distance between every pair — not just neighbors. A regular
+    spiral fills the same disk but reads as a drawn "shape" (a dense core
+    ringed by a perfect circle once its radius caps out) and only spaces
+    consecutive points, not every pair; random rejection sampling looks like
+    an organic scatter and guarantees real separation at moderate zoom."""
     if n == 1:
         return [(base_lat, base_lon)]
-    base_r, max_r = SPREAD_TIERS.get(location_key, DEFAULT_SPREAD)
+    _, max_r = spread_for(location_key)
     lon_scale = max(math.cos(math.radians(base_lat)), 0.2)
+    rng = random.Random(f"{location_key}|{n}")
+
+    # Roughly the spacing that would tile n points evenly across the disk.
+    min_sep = 0.85 * max_r / math.sqrt(n)
+
     points = []
-    for i in range(n):
-        r = min(base_r * math.sqrt(i + 1), max_r)
-        theta = i * GOLDEN_ANGLE
-        dlat = r * math.sin(theta)
-        dlon = (r * math.cos(theta)) / lon_scale
-        points.append((round(base_lat + dlat, 4), round(base_lon + dlon, 4)))
-    return points
+    sep = min_sep
+    stale = 0
+    while len(points) < n:
+        r = max_r * math.sqrt(rng.random())
+        theta = rng.random() * 2 * math.pi
+        lat = base_lat + r * math.sin(theta)
+        lon = base_lon + (r * math.cos(theta)) / lon_scale
+        if all(_deg_dist(lat, lon, plat, plon, lon_scale) >= sep for plat, plon in points):
+            points.append((lat, lon))
+            sep = min_sep
+            stale = 0
+            continue
+        stale += 1
+        if stale > 400:
+            sep *= 0.85  # relax if the disk is getting crowded, then keep trying
+            stale = 0
+
+    return [(round(lat, 4), round(lon, 4)) for lat, lon in points]
 
 
 def main():

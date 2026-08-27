@@ -15,7 +15,8 @@
   const banner = document.querySelector(".banner");
   const mapWrap = document.getElementById("map-wrap");
 
-  const ICON_SIZE = 5;
+  const ICON_SIZE = 3;
+  const MAX_ICON_SCALE = 5; // icon stops growing past ICON_SIZE * this, however far you zoom
   const ICON_PATHS = {
     cover: "M6 2.5h11a1.5 1.5 0 0 1 1.5 1.5v16a1.5 1.5 0 0 1-1.5 1.5H6A2.5 2.5 0 0 1 3.5 19V5A2.5 2.5 0 0 1 6 2.5Z",
     spine: "M6 2.5v18",
@@ -33,14 +34,23 @@
     svg.attr("viewBox", [0, 0, width, height]);
   }
 
+  let currentK = 1;
+
   function setupZoom() {
     zoom = d3.zoom()
-      .scaleExtent([1, 12])
+      .scaleExtent([1, 40])
       .on("zoom", (event) => {
         mapLayer.attr("transform", event.transform);
         markersLayer.attr("transform", event.transform);
+        currentK = event.transform.k;
+        capMarkerScale();
       });
     svg.call(zoom);
+  }
+
+  function capMarkerScale() {
+    const s = Math.min(currentK, MAX_ICON_SCALE) / currentK;
+    markersLayer.selectAll(".zoom-cap").attr("transform", `scale(${s})`);
   }
 
   function positionMarkers() {
@@ -49,6 +59,7 @@
         const [x, y] = projection([d.lon, d.lat]);
         return `translate(${x},${y})`;
       });
+    capMarkerScale();
   }
 
   function flyTo(lon, lat, scale) {
@@ -64,7 +75,7 @@
     const [[x0, y0], [x1, y1]] = bounds;
     const dx = x1 - x0, dy = y1 - y0;
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
-    const scale = Math.max(1, Math.min(10, 0.8 / Math.max(dx / width, dy / height)));
+    const scale = Math.max(1, Math.min(35, 0.8 / Math.max(dx / width, dy / height)));
     const transform = d3.zoomIdentity
       .translate(width / 2, height / 2)
       .scale(scale)
@@ -190,7 +201,9 @@
       .join("g")
       .attr("class", "marker-group");
 
-    const iconWrap = groups.append("g")
+    const zoomCap = groups.append("g").attr("class", "zoom-cap");
+
+    const iconWrap = zoomCap.append("g")
       .attr("class", "marker-icon pop-in")
       .style("animation-delay", () => `${Math.random() * 0.4}s`)
       .on("click", function (event, d) {

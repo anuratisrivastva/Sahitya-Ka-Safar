@@ -10,7 +10,7 @@ Missing covers: 44
 - **Jill Bernard's Small Cute Book of Improv** by Jill Bernard — _Jill Bernard's Small Cute Book of Improv by Jill Bernard, from USA._
 - **The Anthropologists** by Aysegül Savas — _The Anthropologists by Aysegül Savas, from Turkey._
 - **The Aunt Who Wouldn't Die** by Shirshendu Mukhopadhyay — _The Aunt Who Wouldn't Die by Shirshendu Mukhopadhyay, from West Bengal._
-- **The Ministry of Time** by Kaliane Bradley — _The Ministry of Time by Kaliane Bradley, from Cambodia._
+- **The Ministry of Time** by Kaliane Bradley — _The Ministry of Time by Kaliane Bradley, from UK._
 - **Convergence Problems** by Wole Talabi — _Convergence Problems by Wole Talabi, from Nigeria._
 - **Project Hail Mary** by Andy Weir — _Project Hail Mary by Andy Weir, from USA._
 - **Rumours of Spring: A Girlhood in Kashmir** by Farah Bashir — _Rumours of Spring: A Girlhood in Kashmir by Farah Bashir, from Kashmir._
@@ -40,9 +40,9 @@ Missing covers: 44
 - **Breasts and Eggs** by Mieko Kawakami — _Breasts and Eggs by Mieko Kawakami, from Japan._
 - **The Women I Could Be** by Sangita Jogi — _The Women I Could Be by Sangita Jogi, from Rajasthan._
 - **Ikigai/Hygge/Lagom** by Hector Garcia Puigcerver — _Ikigai/Hygge/Lagom by Hector Garcia Puigcerver, from Spain._
-- **Pashmina** by Nidhi Chanani — _Pashmina by Nidhi Chanani, from India._
+- **Pashmina** by Nidhi Chanani — _Pashmina by Nidhi Chanani, from Kashmir._
 - **All About Love** by bell hooks — _All About Love by bell hooks, from USA._
-- **A Life of Adventure and Delight** by Akhil Sharma — _A Life of Adventure and Delight by Akhil Sharma, from India._
+- **A Life of Adventure and Delight** by Akhil Sharma — _A Life of Adventure and Delight by Akhil Sharma, from Delhi._
 - **The Book of Joy** by Dalai Lama XIV — _The Book of Joy by Dalai Lama XIV, from Tibet._
 - **A Pleasant Kind Of Heavy** by Aranyani — _A Pleasant Kind Of Heavy by Aranyani, from Goa._
 - **Love and Lust** by Vikram Seth — _Love and Lust by Vikram Seth, from India._
@@ -130,13 +130,13 @@ Missing covers: 44
 - **One Thousand Days in a Refrigerator** by Manoj Kumar Panda — _One Thousand Days in a Refrigerator by Manoj Kumar Panda, from Odisha._
 - **The Sad Part Was** by Prabda Yoon — _The Sad Part Was by Prabda Yoon, from Thailand._
 - **Tiny, Smiling Daddy** by Mary Gaitskill — _Tiny, Smiling Daddy by Mary Gaitskill, from USA._
-- **Jukebox** by Nidhi Chanani — _Jukebox by Nidhi Chanani, from India._
+- **Jukebox** by Nidhi Chanani — _Jukebox by Nidhi Chanani, from Kashmir._
 - **The Unlikely Adventures of the Shergill Sisters** by Balli Kaur Jaswal — _The Unlikely Adventures of the Shergill Sisters by Balli Kaur Jaswal, from Punjab._
 - **The Miraculous True History of Nomi Ali** by Uzma Aslam Khan — _The Miraculous True History of Nomi Ali by Uzma Aslam Khan, from Andaman Islands._
 - **The Atmospherians** by Isle McElroy — _The Atmospherians by Isle McElroy, from USA._
 - **Pure Colour** by Sheila Heti — _Pure Colour by Sheila Heti, from Canada._
 - **Sakina's Kiss** by Vivek Shanbhag — _Sakina's Kiss by Vivek Shanbhag, from Karnataka._
-- **The Paradise of Food** by Khalid Jawed — _The Paradise of Food by Khalid Jawed, from India._
+- **The Paradise of Food** by Khalid Jawed — _The Paradise of Food by Khalid Jawed, from Delhi._
 - **Let's talk Feelings** by Kavindya Thennakoon — _Let's talk Feelings by Kavindya Thennakoon, from Sri Lanka._
 - **Bodies & Boundaries** by Kavindya Thennakoon — _Bodies & Boundaries by Kavindya Thennakoon, from Sri Lanka._
 
