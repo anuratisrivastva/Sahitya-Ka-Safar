@@ -220,6 +220,7 @@ html, body {
 
 .close-btn {
   position: absolute;
+  z-index: 5;
   top: 0.1rem;
   right: 0.2rem;
   width: 2.75rem;
