@@ -15,7 +15,7 @@
   const banner = document.querySelector(".banner");
   const mapWrap = document.getElementById("map-wrap");
 
-  const ICON_SIZE = 10;
+  const ICON_SIZE = 5;
   const ICON_PATHS = {
     cover: "M6 2.5h11a1.5 1.5 0 0 1 1.5 1.5v16a1.5 1.5 0 0 1-1.5 1.5H6A2.5 2.5 0 0 1 3.5 19V5A2.5 2.5 0 0 1 6 2.5Z",
     spine: "M6 2.5v18",
