@@ -114,7 +114,7 @@ html, body {
   opacity: 0.6;
   transform-box: fill-box;
   transform-origin: center;
-  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s ease;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
   filter: drop-shadow(0 1px 1.5px var(--shadow));
 }
 
@@ -136,13 +136,12 @@ html, body {
 .marker-icon.active .book-ribbon { fill: var(--maroon-deep); }
 
 @keyframes markerPop {
-  0% { transform: scale(0.2); opacity: 0; }
-  70% { transform: scale(1.15); opacity: 1; }
+  0% { transform: scale(0.3); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 
 .marker-icon.pop-in {
-  animation: markerPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  animation: markerPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 .zoom-controls {
@@ -157,13 +156,13 @@ html, body {
 
 .zoom-controls button,
 .info-btn {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
   border: 1px solid var(--gold);
   background: var(--card-bg);
   color: var(--ink);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1;
   cursor: pointer;
   box-shadow: 0 2px 6px var(--shadow);
@@ -210,7 +209,7 @@ html, body {
   box-shadow: 0 16px 40px var(--shadow);
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
-  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.22s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
 }
 
 .book-card.hidden {
@@ -221,11 +220,16 @@ html, body {
 
 .close-btn {
   position: absolute;
-  top: 0.4rem;
-  right: 0.6rem;
+  top: 0.1rem;
+  right: 0.2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--ink-soft);
   cursor: pointer;
   line-height: 1;
