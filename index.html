@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sahitya Ka Safar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="banner">
+  <h1>Sahitya Ka Safar</h1>
+  <p class="tagline">Travel the world through books</p>
+  <div class="counter" id="counter">Countries: — · Books: —</div>
+</header>
+
+<button id="info-btn" class="info-btn" aria-label="About this map">i</button>
+
+<main id="map-wrap">
+  <svg id="map"></svg>
+</main>
+
+<div id="overlay" class="overlay hidden"></div>
+
+<aside id="book-card" class="book-card hidden">
+  <button class="close-btn" data-close aria-label="Close">×</button>
+  <div class="cover-wrap">
+    <img id="card-cover" alt="" />
+    <div id="card-cover-fallback" class="cover-fallback"></div>
+  </div>
+  <h2 id="card-title"></h2>
+  <p id="card-author"></p>
+  <p id="card-place"></p>
+</aside>
+
+<aside id="info-card" class="book-card info-card hidden">
+  <button class="close-btn" data-close aria-label="Close">×</button>
+  <h2>About this map</h2>
+  <p>
+    Books open up entire new worlds. This website captures the books and
+    worlds traveled so far by
+    <a href="https://www.anuratisrivastva.com" target="_blank" rel="noopener">Anurati Srivastva</a>.
+    The hope is that the dots on the map grow, and I can learn more unheard
+    stories outside of US/UK-centric, male, white authors. You can follow me
+    on
+    <a href="https://www.goodreads.com/user/show/9952703-anurati" target="_blank" rel="noopener">Goodreads here</a>
+    for more book recommendations.
+  </p>
+</aside>
+
+<div class="zoom-controls">
+  <button id="zoom-in" aria-label="Zoom in">+</button>
+  <button id="zoom-out" aria-label="Zoom out">−</button>
+  <button id="zoom-reset" aria-label="Reset view">⟲</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

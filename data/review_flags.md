@@ -1,0 +1,188 @@
+# Review flags
+
+Generated (not API-sourced) descriptions: 134
+Missing covers: 44
+
+## Generated descriptions (check tone/accuracy)
+
+- **Here** by Richard McGuire — _Here by Richard McGuire, from USA._
+- **The Housekeeper and the Professor** by Yōko Ogawa — _The Housekeeper and the Professor by Yōko Ogawa, from Japan._
+- **Jill Bernard's Small Cute Book of Improv** by Jill Bernard — _Jill Bernard's Small Cute Book of Improv by Jill Bernard, from USA._
+- **The Anthropologists** by Aysegül Savas — _The Anthropologists by Aysegül Savas, from Turkey._
+- **The Aunt Who Wouldn't Die** by Shirshendu Mukhopadhyay — _The Aunt Who Wouldn't Die by Shirshendu Mukhopadhyay, from West Bengal._
+- **The Ministry of Time** by Kaliane Bradley — _The Ministry of Time by Kaliane Bradley, from Cambodia._
+- **Convergence Problems** by Wole Talabi — _Convergence Problems by Wole Talabi, from Nigeria._
+- **Project Hail Mary** by Andy Weir — _Project Hail Mary by Andy Weir, from USA._
+- **Rumours of Spring: A Girlhood in Kashmir** by Farah Bashir — _Rumours of Spring: A Girlhood in Kashmir by Farah Bashir, from Kashmir._
+- **Counterattacks at Thirty** by Won-Pyung Sohn — _Counterattacks at Thirty by Won-Pyung Sohn, from South Korea._
+- **I'm a Fan** by Sheena Patel — _I'm a Fan by Sheena Patel, from Gujarat._
+- **If Cats Disappeared from the World** by Genki Kawamura — _If Cats Disappeared from the World by Genki Kawamura, from Japan._
+- **I'm Waiting for You and Other Stories** by Bo-young Kim — _I'm Waiting for You and Other Stories by Bo-young Kim, from South Korea._
+- **How to Love** by Alex Norris — _How to Love by Alex Norris, from UK._
+- **Tell Me How It Ends** by Valeria Luiselli — _Tell Me How It Ends by Valeria Luiselli, from Mexico._
+- **Ayiti** by Roxane Gay — _Ayiti by Roxane Gay, from Haiti._
+- **The Book of Form and Emptiness** by Ruth Ozeki — _The Book of Form and Emptiness by Ruth Ozeki, from Japan._
+- **Happy Stories, Mostly** by Norman Erikson Pasaribu — _Happy Stories, Mostly by Norman Erikson Pasaribu, from Indonesia._
+- **Lizard** by Banana Yoshimoto — _Lizard by Banana Yoshimoto, from Japan._
+- **Dead-End Memories** by Banana Yoshimoto — _Dead-End Memories by Banana Yoshimoto, from Japan._
+- **Spirit Nights** by Easterine Kire — _Spirit Nights by Easterine Kire, from Nagaland._
+- **Out There** by Kate Folk — _Out There by Kate Folk, from USA._
+- **Teen Couple Have Fun Outdoors** by Aravind Jayan — _Teen Couple Have Fun Outdoors by Aravind Jayan, from Kerala._
+- **Bliss Montage** by Ling Ma — _Bliss Montage by Ling Ma, from China._
+- **The Education of Yuri** by Jerry Pinto — _The Education of Yuri by Jerry Pinto, from Goa/Mumbai._
+- **How to Live Safely in a Science Fictional Universe** by Charles Yu — _How to Live Safely in a Science Fictional Universe by Charles Yu, from Taiwan._
+- **Dreamers** by Snigdha Poonam — _Dreamers by Snigdha Poonam, from India._
+- **Laburnum For My Head** by Temsula Ao — _Laburnum For My Head by Temsula Ao, from Nagaland._
+- **The Melancholy Death of Oyster Boy** by Tim Burton — _The Melancholy Death of Oyster Boy by Tim Burton, from USA._
+- **There's No Such Thing as an Easy Job** by Kikuko Tsumura — _There's No Such Thing as an Easy Job by Kikuko Tsumura, from Japan._
+- **Who am I?** by Philip Bunting — _Who am I? by Philip Bunting, from Australia._
+- **A Book of Surrealist Games** by Alastair Brotchie — _A Book of Surrealist Games by Alastair Brotchie, from UK._
+- **Breasts and Eggs** by Mieko Kawakami — _Breasts and Eggs by Mieko Kawakami, from Japan._
+- **The Women I Could Be** by Sangita Jogi — _The Women I Could Be by Sangita Jogi, from Rajasthan._
+- **Ikigai/Hygge/Lagom** by Hector Garcia Puigcerver — _Ikigai/Hygge/Lagom by Hector Garcia Puigcerver, from Spain._
+- **Pashmina** by Nidhi Chanani — _Pashmina by Nidhi Chanani, from India._
+- **All About Love** by bell hooks — _All About Love by bell hooks, from USA._
+- **A Life of Adventure and Delight** by Akhil Sharma — _A Life of Adventure and Delight by Akhil Sharma, from India._
+- **The Book of Joy** by Dalai Lama XIV — _The Book of Joy by Dalai Lama XIV, from Tibet._
+- **A Pleasant Kind Of Heavy** by Aranyani — _A Pleasant Kind Of Heavy by Aranyani, from Goa._
+- **Love and Lust** by Vikram Seth — _Love and Lust by Vikram Seth, from India._
+- **Two Novellas and a Story** by Ambai — _Two Novellas and a Story by Ambai, from Tamil Nadu._
+- **Letters to a Young Poet** by Rainer Maria Rilke — _Letters to a Young Poet by Rainer Maria Rilke, from Austria._
+- **The Boy, the Mole, the Fox and the Horse** by Charlie Mackesy — _The Boy, the Mole, the Fox and the Horse by Charlie Mackesy, from UK._
+- **Love Is Not a Word** by Debotri Dhar — _Love Is Not a Word by Debotri Dhar, from Delhi._
+- **The Women Who Forgot to Invent Facebook** by Nisha Susan — _The Women Who Forgot to Invent Facebook by Nisha Susan, from Kerala._
+- **These Are My Children** by Damodar Mauzo — _These Are My Children by Damodar Mauzo, from Goa._
+- **Forsaking Paradise** by Ravina Aggrawal — _Forsaking Paradise by Ravina Aggrawal, from Ladakh._
+- **Red Rose, White Rose** by Eileen Chang — _Red Rose, White Rose by Eileen Chang, from China._
+- **One Part Woman** by Perumal Murugan — _One Part Woman by Perumal Murugan, from Tamil Nadu._
+- **Chhotu** by Varud Gupta — _Chhotu by Varud Gupta, from Delhi._
+- **Flights** by Olga Tokarczuk — _Flights by Olga Tokarczuk, from Poland._
+- **Tell Her Everything** by Mirza Waheed — _Tell Her Everything by Mirza Waheed, from Kashmir._
+- **Delta of Venus** by Anaïs Nin — _Delta of Venus by Anaïs Nin, from France._
+- **Separate Journeys** by Geeta Dharmarajan — _Separate Journeys by Geeta Dharmarajan, from Tamil Nadu._
+- **Munnu** by Malik Sajad — _Munnu by Malik Sajad, from Kashmir._
+- **Sexing the Cherry** by Jeanette Winterson — _Sexing the Cherry by Jeanette Winterson, from UK._
+- **Slowness** by Milan Kundera — _Slowness by Milan Kundera, from Czech Republic._
+- **The Life of a Stupid Man** by Ryūnosuke Akutagawa — _The Life of a Stupid Man by Ryūnosuke Akutagawa, from Japan._
+- **Bhimayana** by Srividya Natarajan — _Bhimayana by Srividya Natarajan, from Tamil Nadu._
+- **Ayoni and other stories** by Alladi Kuppuswami — _Ayoni and other stories by Alladi Kuppuswami, from Andhra Pradesh/Telangana._
+- **Indian Love Stories** by Sudhir Kakar — _Indian Love Stories by Sudhir Kakar, from India._
+- **Selected Short Stories** by Rabindranath Tagore — _Selected Short Stories by Rabindranath Tagore, from West Bengal._
+- **Poems by Faiz** by Faiz Ahmad Faiz — _Poems by Faiz by Faiz Ahmad Faiz, from Pakistan._
+- **The Little Prince** by Antoine de Saint-Exupéry — _The Little Prince by Antoine de Saint-Exupéry, from France._
+- **The Unbearable Lightness of Being** by Milan Kundera — _The Unbearable Lightness of Being by Milan Kundera, from Czech Republic._
+- **Bitter Fruit** by Saadat Hasan Manto — _Bitter Fruit by Saadat Hasan Manto, from Punjab._
+- **Makers of Modern India** by Ramachandra Guha — _Makers of Modern India by Ramachandra Guha, from India._
+- **Seeing Like a Feminist** by Nivedita Menon — _Seeing Like a Feminist by Nivedita Menon, from Kerala._
+- **Love & Misadventure** by Lang Leav — _Love & Misadventure by Lang Leav, from New Zealand._
+- **Kafka on the Shore** by Haruki Murakami — _Kafka on the Shore by Haruki Murakami, from Japan._
+- **Come September** by Arundhati Roy — _Come September by Arundhati Roy, from India._
+- **Open House for Butterflies** by Ruth Krauss — _Open House for Butterflies by Ruth Krauss, from USA._
+- **Meditations** by Marcus Aurelius — _Meditations by Marcus Aurelius, from Italy._
+- **The Devil Wears Prada** by Lauren Weisberger — _The Devil Wears Prada by Lauren Weisberger, from USA._
+- **The O. Henry Prize Stories 2002** by Larry Dark — _The O. Henry Prize Stories 2002 by Larry Dark, from USA._
+- **City of Djinns** by William Dalrymple — _City of Djinns by William Dalrymple, from India._
+- **A Hunger Artist** by Franz Kafka — _A Hunger Artist by Franz Kafka, from Czech Republic._
+- **Vita Sexualis** by Ōgai Mori — _Vita Sexualis by Ōgai Mori, from Japan._
+- **Labyrinths** by Jorge Luis Borges — _Labyrinths by Jorge Luis Borges, from Argentina._
+- **Great Essays in Science** by Martin Gardner — _Great Essays in Science by Martin Gardner, from USA._
+- **Intensity** by Dean Koontz — _Intensity by Dean Koontz, from USA._
+- **The Writing Life** by Annie Dillard — _The Writing Life by Annie Dillard, from USA._
+- **A Pebble for Your Pocket** by Thich Nhat Hanh — _A Pebble for Your Pocket by Thich Nhat Hanh, from Vietnam._
+- **The Myth of Sisyphus** by Albert Camus — _The Myth of Sisyphus by Albert Camus, from Algeria._
+- **Sultana's Dream** by Rokeya Sakhawat Hossain — _Sultana's Dream by Rokeya Sakhawat Hossain, from West Bengal._
+- **Selected Letters of Rabindranath Tagore** by Rabindranath Tagore — _Selected Letters of Rabindranath Tagore by Rabindranath Tagore, from West Bengal._
+- **The Nose** by Nikolai Gogol — _The Nose by Nikolai Gogol, from Ukraine._
+- **Bhupen Khakhar** by Bhupen Khakhar — _Bhupen Khakhar by Bhupen Khakhar, from Gujarat._
+- **Der Ursprung des Kunstwerkes** by Martin Heidegger — _Der Ursprung des Kunstwerkes by Martin Heidegger, from Germany._
+- **Blind Willow, Sleeping Woman** by Haruki Murakami — _Blind Willow, Sleeping Woman by Haruki Murakami, from Japan._
+- **Balzac and the Little Chinese Seamstress** by Sijie Dai — _Balzac and the Little Chinese Seamstress by Sijie Dai, from China._
+- **Kitchen** by Banana Yoshimoto — _Kitchen by Banana Yoshimoto, from Japan._
+- **The Complete Maus** by Art Spiegelman — _The Complete Maus by Art Spiegelman, from USA._
+- **The White Tiger** by Aravind Adiga — _The White Tiger by Aravind Adiga, from India._
+- **Existentialism is a Humanism** by Jean-Paul Sartre — _Existentialism is a Humanism by Jean-Paul Sartre, from France._
+- **The Three-Cornered World** by Natsume Sōseki — _The Three-Cornered World by Natsume Sōseki, from Japan._
+- **P.S. I Love You** by Cecelia Ahern — _P.S. I Love You by Cecelia Ahern, from Ireland._
+- **I'll Be You and You Be Me** by Ruth Krauss — _I'll Be You and You Be Me by Ruth Krauss, from USA._
+- **Dear Everybody** by Michael Kimball — _Dear Everybody by Michael Kimball, from USA._
+- **Princess Nevermore** by Dian Curtis Regan — _Princess Nevermore by Dian Curtis Regan, from USA._
+- **Sundays at Tiffany's** by James Patterson — _Sundays at Tiffany's by James Patterson, from USA._
+- **One Day** by David Nicholls — _One Day by David Nicholls, from UK._
+- **The Complete Persepolis** by Marjane Satrapi — _The Complete Persepolis by Marjane Satrapi, from Iran._
+- **Before I Go to Sleep** by S.J. Watson — _Before I Go to Sleep by S.J. Watson, from UK._
+- **Habibi** by Craig Thompson — _Habibi by Craig Thompson, from USA._
+- **Chouboli & Other Stories** by Vijaydan Detha — _Chouboli & Other Stories by Vijaydan Detha, from Rajasthan._
+- **The Fault in Our Stars** by John Green — _The Fault in Our Stars by John Green, from USA._
+- **The Future is Japanese** by Ken Liu — _The Future is Japanese by Ken Liu, from China._
+- **The Yellow Wallpaper and Other Stories** by Charlotte Perkins Gilman — _The Yellow Wallpaper and Other Stories by Charlotte Perkins Gilman, from USA._
+- **The Yellow Wallpaper** by Charlotte Perkins Gilman — _The Yellow Wallpaper by Charlotte Perkins Gilman, from USA._
+- **The Cuckoo's Calling** by Robert Galbraith — _The Cuckoo's Calling by Robert Galbraith, from UK._
+- **Love Stories # 1 to 14** by Annie Zaidi — _Love Stories # 1 to 14 by Annie Zaidi, from India._
+- **Computing machinery and intelligence** by Alan Turing — _Computing machinery and intelligence by Alan Turing, from UK._
+- **Essentialism** by Greg McKeown — _Essentialism by Greg McKeown, from UK._
+- **Kashmir Pending** by Naseer Ahmed — _Kashmir Pending by Naseer Ahmed, from Kashmir._
+- **14 Stories That Inspired Satyajit Ray** by Bhaskar Chattopadhyay — _14 Stories That Inspired Satyajit Ray by Bhaskar Chattopadhyay, from West Bengal._
+- **Polyphony, Volume 4** by Deborah Layne — _Polyphony, Volume 4 by Deborah Layne, from USA._
+- **DOGS! An Anthology** by Vidyun Sabhaney — _DOGS! An Anthology by Vidyun Sabhaney, from Delhi._
+- **The Strange Library** by Haruki Murakami — _The Strange Library by Haruki Murakami, from Japan._
+- **What Is Not Yours Is Not Yours** by Helen Oyeyemi — _What Is Not Yours Is Not Yours by Helen Oyeyemi, from Nigeria._
+- **Clarkesworld Magazine Issue 100** by Neil Clarke — _Clarkesworld Magazine Issue 100 by Neil Clarke, from USA._
+- **One Thousand Days in a Refrigerator** by Manoj Kumar Panda — _One Thousand Days in a Refrigerator by Manoj Kumar Panda, from Odisha._
+- **The Sad Part Was** by Prabda Yoon — _The Sad Part Was by Prabda Yoon, from Thailand._
+- **Tiny, Smiling Daddy** by Mary Gaitskill — _Tiny, Smiling Daddy by Mary Gaitskill, from USA._
+- **Jukebox** by Nidhi Chanani — _Jukebox by Nidhi Chanani, from India._
+- **The Unlikely Adventures of the Shergill Sisters** by Balli Kaur Jaswal — _The Unlikely Adventures of the Shergill Sisters by Balli Kaur Jaswal, from Punjab._
+- **The Miraculous True History of Nomi Ali** by Uzma Aslam Khan — _The Miraculous True History of Nomi Ali by Uzma Aslam Khan, from Andaman Islands._
+- **The Atmospherians** by Isle McElroy — _The Atmospherians by Isle McElroy, from USA._
+- **Pure Colour** by Sheila Heti — _Pure Colour by Sheila Heti, from Canada._
+- **Sakina's Kiss** by Vivek Shanbhag — _Sakina's Kiss by Vivek Shanbhag, from Karnataka._
+- **The Paradise of Food** by Khalid Jawed — _The Paradise of Food by Khalid Jawed, from India._
+- **Let's talk Feelings** by Kavindya Thennakoon — _Let's talk Feelings by Kavindya Thennakoon, from Sri Lanka._
+- **Bodies & Boundaries** by Kavindya Thennakoon — _Bodies & Boundaries by Kavindya Thennakoon, from Sri Lanka._
+
+## Missing covers
+
+- Here by Richard McGuire
+- The Housekeeper and the Professor by Yōko Ogawa
+- Jill Bernard's Small Cute Book of Improv by Jill Bernard
+- The Aunt Who Wouldn't Die by Shirshendu Mukhopadhyay
+- Rumours of Spring: A Girlhood in Kashmir by Farah Bashir
+- The Taste of Words by Raza Mir
+- If Cats Disappeared from the World by Genki Kawamura
+- Happy Stories, Mostly by Norman Erikson Pasaribu
+- Spirit Nights by Easterine Kire
+- The Education of Yuri by Jerry Pinto
+- Laburnum For My Head by Temsula Ao
+- Who am I? by Philip Bunting
+- Breasts and Eggs by Mieko Kawakami
+- Ikigai/Hygge/Lagom by Hector Garcia Puigcerver
+- Parrots of Desire by Amrita Narayanan
+- A Pleasant Kind Of Heavy by Aranyani
+- Two Novellas and a Story by Ambai
+- Love Is Not a Word by Debotri Dhar
+- The Women Who Forgot to Invent Facebook by Nisha Susan
+- These Are My Children by Damodar Mauzo
+- Delta of Venus by Anaïs Nin
+- Slowness by Milan Kundera
+- Bhimayana by Srividya Natarajan
+- The Unbearable Lightness of Being by Milan Kundera
+- Kafka on the Shore by Haruki Murakami
+- Intensity by Dean Koontz
+- Blind Willow, Sleeping Woman by Haruki Murakami
+- Kitchen by Banana Yoshimoto
+- Existentialism is a Humanism by Jean-Paul Sartre
+- P.S. I Love You by Cecelia Ahern
+- Dear Everybody by Michael Kimball
+- Before I Go to Sleep by S.J. Watson
+- Chouboli & Other Stories by Vijaydan Detha
+- Love Stories # 1 to 14 by Annie Zaidi
+- Kashmir Pending by Naseer Ahmed
+- 14 Stories That Inspired Satyajit Ray by Bhaskar Chattopadhyay
+- Polyphony, Volume 4 by Deborah Layne
+- DOGS! An Anthology by Vidyun Sabhaney
+- The Strange Library by Haruki Murakami
+- What Is Not Yours Is Not Yours by Helen Oyeyemi
+- One Thousand Days in a Refrigerator by Manoj Kumar Panda
+- Tiny, Smiling Daddy by Mary Gaitskill
+- The Miraculous True History of Nomi Ali by Uzma Aslam Khan
+- Sakina's Kiss by Vivek Shanbhag

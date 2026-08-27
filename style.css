@@ -1,0 +1,322 @@
+:root {
+  --parchment: #f3e9d2;
+  --parchment-deep: #e8dab3;
+  --ocean: #9dc1b4;
+  --ocean-deep: #86ab9d;
+  --land: #f1e4bf;
+  --land-hover: #e8d6a4;
+  --ink: #4a3728;
+  --ink-soft: #7a6752;
+  --maroon: #8a3324;
+  --maroon-deep: #6e2419;
+  --gold: #b8923f;
+  --card-bg: #faf3e3;
+  --shadow: rgba(74, 55, 40, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--parchment);
+  font-family: 'Roboto Serif', Georgia, serif;
+  color: var(--ink);
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  text-align: center;
+  padding: 1.2rem 1rem 0.9rem;
+  background: linear-gradient(var(--parchment) 80%, rgba(243, 233, 210, 0));
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.banner h1 {
+  font-family: 'MedievalSharp', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  letter-spacing: 0.05em;
+  color: var(--maroon-deep);
+  margin: 0;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0.2rem 0 0.6rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.counter {
+  display: inline-block;
+  pointer-events: auto;
+  background: var(--card-bg);
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+#map-wrap {
+  position: absolute;
+  top: var(--header-h, 128px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, var(--ocean) 0%, var(--ocean-deep) 100%);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+#map:active { cursor: grabbing; }
+
+.land {
+  fill: var(--land);
+  stroke: var(--ink);
+  stroke-width: 0.5;
+  stroke-opacity: 0.5;
+  transition: fill 0.2s ease;
+}
+
+.land:hover { fill: var(--land-hover); }
+
+.graticule {
+  fill: none;
+  stroke: var(--ink);
+  stroke-opacity: 0.08;
+  stroke-width: 0.5;
+}
+
+.sphere {
+  fill: none;
+}
+
+.marker-icon {
+  cursor: pointer;
+  opacity: 0.6;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s ease;
+  filter: drop-shadow(0 1px 1.5px var(--shadow));
+}
+
+.marker-icon .book-cover { fill: var(--maroon); transition: fill 0.15s ease; }
+.marker-icon .book-spine { fill: none; stroke: var(--maroon-deep); stroke-width: 1.2; }
+.marker-icon .book-ribbon { fill: var(--gold); transition: fill 0.15s ease; }
+
+.marker-icon:hover {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.marker-icon.active {
+  opacity: 1;
+  transform: scale(1.7);
+}
+
+.marker-icon.active .book-cover { fill: var(--gold); }
+.marker-icon.active .book-ribbon { fill: var(--maroon-deep); }
+
+@keyframes markerPop {
+  0% { transform: scale(0.2); opacity: 0; }
+  70% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.marker-icon.pop-in {
+  animation: markerPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.zoom-controls {
+  position: absolute;
+  top: calc(var(--header-h, 128px) + 1rem);
+  right: 1.2rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.zoom-controls button,
+.info-btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--card-bg);
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.zoom-controls button:hover,
+.info-btn:hover { background: var(--land-hover); }
+
+.info-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 31;
+  font-family: 'Roboto Serif', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  background: rgba(74, 55, 40, 0.35);
+  backdrop-filter: blur(1.5px);
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.book-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  width: min(300px, 86vw);
+  background: var(--card-bg);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 16px 40px var(--shadow);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.22s ease;
+}
+
+.book-card.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  pointer-events: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.cover-wrap {
+  width: 100%;
+  height: 150px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.7rem;
+  background: var(--parchment-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-wrap img.hidden { display: none; }
+
+.cover-fallback {
+  display: none;
+  font-family: 'Roboto Serif', serif;
+  font-style: italic;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 0 0.8rem;
+  font-size: 0.95rem;
+}
+
+.cover-fallback.visible { display: block; }
+
+#card-title {
+  font-family: 'Roboto Serif', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0 0 0.3rem;
+  line-height: 1.3;
+  color: var(--maroon-deep);
+}
+
+#card-author {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+#card-place {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.info-card {
+  width: min(340px, 88vw);
+  text-align: left;
+}
+
+.info-card h2 {
+  font-family: 'Roboto Serif', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--maroon-deep);
+  margin: 0 0 0.6rem;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.info-card a {
+  color: var(--maroon);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 2px;
+}
+
+.info-card a:hover { color: var(--maroon-deep); }
+
+@media (max-width: 640px) {
+  .zoom-controls { top: auto; bottom: 1rem; right: 1rem; }
+}
