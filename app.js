@@ -183,6 +183,7 @@
       });
 
     if (!zoom) setupZoom();
+    zoom.translateExtent([[0, 0], [width, height]]).extent([[0, 0], [width, height]]);
 
     const groups = markersLayer.selectAll("g.marker-group")
       .data(booksData)
