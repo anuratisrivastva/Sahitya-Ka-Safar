@@ -39,17 +39,15 @@
       .on("zoom", (event) => {
         mapLayer.attr("transform", event.transform);
         markersLayer.attr("transform", event.transform);
-        rescaleMarkers(event.transform.k);
       });
     svg.call(zoom);
   }
 
-  function rescaleMarkers(k) {
-    const s = 1 / k;
+  function positionMarkers() {
     markersLayer.selectAll(".marker-group")
       .attr("transform", (d) => {
         const [x, y] = projection([d.lon, d.lat]);
-        return `translate(${x},${y}) scale(${s})`;
+        return `translate(${x},${y})`;
       });
   }
 
@@ -59,6 +57,18 @@
       .translate(width / 2, height / 2)
       .scale(scale)
       .translate(-x, -y);
+    svg.transition().duration(750).ease(d3.easeCubicInOut).call(zoom.transform, transform);
+  }
+
+  function flyToBounds(bounds) {
+    const [[x0, y0], [x1, y1]] = bounds;
+    const dx = x1 - x0, dy = y1 - y0;
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    const scale = Math.max(1, Math.min(10, 0.8 / Math.max(dx / width, dy / height)));
+    const transform = d3.zoomIdentity
+      .translate(width / 2, height / 2)
+      .scale(scale)
+      .translate(-cx, -cy);
     svg.transition().duration(750).ease(d3.easeCubicInOut).call(zoom.transform, transform);
   }
 
@@ -166,7 +176,11 @@
       .data(land.features)
       .join("path")
       .attr("class", "land")
-      .attr("d", path);
+      .attr("d", path)
+      .on("click", function (event, d) {
+        event.stopPropagation();
+        flyToBounds(path.bounds(d));
+      });
 
     if (!zoom) setupZoom();
 
@@ -175,10 +189,8 @@
       .join("g")
       .attr("class", "marker-group");
 
-    const scale = ICON_SIZE / 24;
-    const icon = groups.append("g")
+    const iconWrap = groups.append("g")
       .attr("class", "marker-icon pop-in")
-      .attr("transform", `translate(${-ICON_SIZE / 2},${-ICON_SIZE / 2}) scale(${scale})`)
       .style("animation-delay", () => `${Math.random() * 0.4}s`)
       .on("click", function (event, d) {
         event.stopPropagation();
@@ -186,10 +198,13 @@
         showCard(d, this);
       });
 
-    icon.append("path").attr("class", "book-cover").attr("d", ICON_PATHS.cover);
-    icon.append("path").attr("class", "book-spine").attr("d", ICON_PATHS.spine);
-    icon.append("path").attr("class", "book-ribbon").attr("d", ICON_PATHS.ribbon);
+    const shape = iconWrap.append("g")
+      .attr("transform", `translate(${-ICON_SIZE / 2},${-ICON_SIZE / 2}) scale(${ICON_SIZE / 24})`);
 
-    rescaleMarkers(1);
+    shape.append("path").attr("class", "book-cover").attr("d", ICON_PATHS.cover);
+    shape.append("path").attr("class", "book-spine").attr("d", ICON_PATHS.spine);
+    shape.append("path").attr("class", "book-ribbon").attr("d", ICON_PATHS.ribbon);
+
+    positionMarkers();
   }
 })();

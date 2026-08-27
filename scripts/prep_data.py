@@ -24,7 +24,16 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from country_coords import resolve_coords
+from country_coords import INDIA_REGION_COORDS, resolve_coords
+
+
+def location_key(country: str, region: str) -> str:
+    """Same precedence as resolve_coords — the string used to look up
+    a spread tier must match what was actually used to place the point."""
+    region = (region or "").strip()
+    if region and region in INDIA_REGION_COORDS:
+        return region
+    return (country or "").strip()
 
 ROOT = Path(__file__).resolve().parent.parent
 CSV_PATH = ROOT / "data" / "books_map.csv"
@@ -176,17 +185,40 @@ def fetch_book_meta(title: str, author: str) -> dict:
 
 GOLDEN_ANGLE = math.pi * (3 - math.sqrt(5))  # ~137.5°, sunflower phyllotaxis
 
+# (base_radius, max_radius) in degrees, keyed by the location string actually
+# used to resolve coordinates (region name if present, else country). Only
+# countries whose centroid has generous buffer before any border — vast
+# interiors or ocean on most sides — get a wide spread; everything else
+# (small countries, Indian states) stays tight so jittered points can't
+# wander into a neighboring country, e.g. Nagaland spilling into Myanmar.
+SPREAD_TIERS = {
+    "USA": (0.7, 2.2),
+    "Russia": (0.9, 2.8),
+    "Canada": (0.9, 2.6),
+    "Australia": (0.8, 2.4),
+    "Brazil": (0.7, 2.0),
+    "China": (0.6, 1.8),
+    "India": (0.5, 1.4),  # country-level fallback only, not the states below
+    "UK": (0.3, 0.7),
+    "Japan": (0.4, 1.0),
+    "Indonesia": (0.4, 1.2),
+    "Mexico": (0.4, 1.0),
+}
+DEFAULT_SPREAD = (0.13, 0.35)
 
-def jitter_group(base_lat: float, base_lon: float, n: int):
+
+def jitter_group(base_lat: float, base_lon: float, n: int, location_key: str = ""):
     """Spread n points around (base_lat, base_lon) in a sunflower spiral —
-    radius grows with each point so dense clusters (e.g. India's ~40 books)
-    fan out instead of crowding on a single fixed-radius ring."""
+    radius grows with each point so dense clusters (e.g. USA's ~30 books)
+    fan out instead of crowding on a single fixed-radius ring, capped per
+    location so the spread can't cross into a neighboring country/state."""
     if n == 1:
         return [(base_lat, base_lon)]
+    base_r, max_r = SPREAD_TIERS.get(location_key, DEFAULT_SPREAD)
     lon_scale = max(math.cos(math.radians(base_lat)), 0.2)
     points = []
     for i in range(n):
-        r = 1.1 * math.sqrt(i + 1)
+        r = min(base_r * math.sqrt(i + 1), max_r)
         theta = i * GOLDEN_ANGLE
         dlat = r * math.sin(theta)
         dlon = (r * math.cos(theta)) / lon_scale
@@ -228,7 +260,8 @@ def main():
 
     final_coords = [None] * len(rows)
     for (base_lat, base_lon), idxs in groups.items():
-        for offset, i in zip(jitter_group(base_lat, base_lon, len(idxs)), idxs):
+        key = location_key(rows[idxs[0]]["country"], rows[idxs[0]]["region"])
+        for offset, i in zip(jitter_group(base_lat, base_lon, len(idxs), key), idxs):
             final_coords[i] = offset
 
     cache = load_cache()
