@@ -206,6 +206,7 @@ html, body {
   border: 1px solid var(--gold);
   border-radius: 12px;
   padding: 1.2rem;
+  padding-top: 3rem;
   box-shadow: 0 16px 40px var(--shadow);
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -221,10 +222,10 @@ html, body {
 .close-btn {
   position: absolute;
   z-index: 5;
-  top: 0.1rem;
-  right: 0.2rem;
-  width: 2.75rem;
-  height: 2.75rem;
+  top: 0.3rem;
+  right: 0.3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
