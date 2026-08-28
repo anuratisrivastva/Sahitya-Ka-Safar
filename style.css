@@ -75,7 +75,24 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at center, var(--ocean) 0%, var(--ocean-deep) 100%);
+  background-color: var(--ocean-deep);
+  background-image:
+    radial-gradient(ellipse 55% 45% at 18% 25%, rgba(196, 221, 205, 0.55) 0%, transparent 62%),
+    radial-gradient(ellipse 45% 55% at 85% 15%, rgba(120, 165, 150, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 70% 78%, rgba(90, 140, 128, 0.4) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(180, 210, 195, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 55% at 45% 45%, rgba(157, 193, 180, 0.5) 0%, transparent 70%),
+    linear-gradient(160deg, var(--ocean) 0%, var(--ocean-deep) 100%);
+}
+
+#map-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 #map {

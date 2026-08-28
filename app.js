@@ -164,7 +164,7 @@
     booksData = books;
 
     const countries = new Set(books.map((b) => b.country).filter(Boolean));
-    counterEl.textContent = `Countries: ${countries.size} · Books: ${books.length}`;
+    counterEl.innerHTML = `Countries: <strong>${countries.size}</strong> · Books: <strong>${books.length}</strong>`;
 
     render();
   });
