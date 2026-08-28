@@ -38,31 +38,6 @@ html, body {
   box-shadow: 0 2px 10px var(--shadow);
 }
 
-.page-frame {
-  position: fixed;
-  inset: 8px;
-  border: 2px solid var(--gold);
-  pointer-events: none;
-  z-index: 32;
-}
-
-.page-frame::before {
-  content: '';
-  position: absolute;
-  inset: 5px;
-  border: 1px solid var(--gold);
-  opacity: 0.55;
-}
-
-.flourish {
-  width: 130px;
-  height: 13px;
-  margin: 0.5rem 0 0.35rem;
-}
-
-.flourish line { stroke: var(--gold); stroke-width: 1; }
-.flourish path { fill: var(--gold); }
-
 .banner h1 {
   font-family: 'MedievalSharp', Georgia, serif;
   font-weight: 400;
