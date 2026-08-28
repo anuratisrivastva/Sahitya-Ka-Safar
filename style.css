@@ -77,11 +77,11 @@ html, body {
   bottom: 0;
   background-color: var(--ocean-deep);
   background-image:
-    radial-gradient(ellipse 55% 45% at 18% 25%, rgba(196, 221, 205, 0.55) 0%, transparent 62%),
-    radial-gradient(ellipse 45% 55% at 85% 15%, rgba(120, 165, 150, 0.45) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 70% 78%, rgba(90, 140, 128, 0.4) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(180, 210, 195, 0.4) 0%, transparent 60%),
-    radial-gradient(ellipse 65% 55% at 45% 45%, rgba(157, 193, 180, 0.5) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 45% at 18% 25%, rgba(206, 228, 213, 0.75) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 55% at 85% 15%, rgba(110, 158, 143, 0.65) 0%, transparent 58%),
+    radial-gradient(ellipse 60% 50% at 70% 78%, rgba(70, 120, 110, 0.6) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(190, 217, 202, 0.6) 0%, transparent 58%),
+    radial-gradient(ellipse 65% 55% at 45% 45%, rgba(157, 193, 180, 0.65) 0%, transparent 68%),
     linear-gradient(160deg, var(--ocean) 0%, var(--ocean-deep) 100%);
 }
 
@@ -90,9 +90,9 @@ html, body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.8;
   mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.6 0.6 0.6 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 #map {
@@ -103,6 +103,10 @@ html, body {
 }
 
 #map:active { cursor: grabbing; }
+
+.map-layer {
+  filter: url(#parchment-grain);
+}
 
 .land {
   fill: var(--land);
