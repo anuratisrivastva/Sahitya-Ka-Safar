@@ -363,6 +363,10 @@ def main():
             "description": meta["description"],
             "description_source": meta["description_source"],
         }
+        if meta.get("rating"):
+            record["rating"] = meta["rating"]
+        if meta.get("review"):
+            record["review"] = meta["review"]
         enriched.append(record)
 
         if meta["description_source"] == "generated":
