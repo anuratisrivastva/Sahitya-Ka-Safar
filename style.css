@@ -77,11 +77,11 @@ html, body {
   bottom: 0;
   background-color: var(--ocean-deep);
   background-image:
-    radial-gradient(ellipse 55% 45% at 18% 25%, rgba(206, 228, 213, 0.75) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 55% at 85% 15%, rgba(110, 158, 143, 0.65) 0%, transparent 58%),
-    radial-gradient(ellipse 60% 50% at 70% 78%, rgba(70, 120, 110, 0.6) 0%, transparent 62%),
-    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(190, 217, 202, 0.6) 0%, transparent 58%),
-    radial-gradient(ellipse 65% 55% at 45% 45%, rgba(157, 193, 180, 0.65) 0%, transparent 68%),
+    radial-gradient(ellipse 55% 45% at 18% 25%, rgba(227, 238, 232, 0.7) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 55% at 85% 15%, rgba(156, 184, 172, 0.5) 0%, transparent 58%),
+    radial-gradient(ellipse 60% 50% at 70% 78%, rgba(135, 162, 150, 0.45) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(207, 225, 216, 0.55) 0%, transparent 58%),
+    radial-gradient(ellipse 65% 55% at 45% 45%, rgba(178, 209, 198, 0.5) 0%, transparent 68%),
     linear-gradient(160deg, var(--ocean) 0%, var(--ocean-deep) 100%);
 }
 
