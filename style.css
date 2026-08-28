@@ -377,11 +377,11 @@ html, body {
 .card-review {
   margin: 0.4rem 0 0;
   font-size: 0.85rem;
-  font-style: italic;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--ink-soft);
   border-top: 1px solid var(--parchment-deep);
   padding-top: 0.5rem;
+  white-space: pre-line;
 }
 
 .card-review.hidden { display: none; }
