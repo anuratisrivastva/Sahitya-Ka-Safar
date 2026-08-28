@@ -297,7 +297,7 @@ html, body {
 }
 
 .info-card {
-  width: min(340px, 88vw);
+  width: min(420px, 90vw);
   text-align: center;
 }
 
