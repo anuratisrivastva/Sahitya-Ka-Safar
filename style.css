@@ -200,13 +200,15 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 20;
+  z-index: 35;
   width: min(300px, 86vw);
   background: var(--card-bg);
   border: 1px solid var(--gold);
   border-radius: 12px;
   padding: 1.2rem;
   padding-top: 3rem;
+  max-height: 85vh;
+  overflow-y: auto;
   box-shadow: 0 16px 40px var(--shadow);
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -302,17 +304,11 @@ html, body {
 .info-card .info-title {
   font-family: 'MedievalSharp', Georgia, serif;
   font-weight: 400;
-  font-size: 1.7rem;
-  letter-spacing: 0.03em;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
   color: var(--maroon-deep);
-  margin: 0;
-}
-
-.info-card .info-tagline {
-  font-style: italic;
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-  margin: 0.15rem 0 1rem;
+  margin: 0 0 1rem;
 }
 
 .info-card p {
@@ -325,7 +321,7 @@ html, body {
 
 .info-card .info-signature {
   margin-top: 1rem;
-  text-align: right;
+  text-align: left;
   font-style: italic;
   color: var(--ink-soft);
   line-height: 1.4;
