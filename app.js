@@ -152,6 +152,8 @@
     render();
   });
 
+  openModal(infoCard);
+
   let worldData, booksData;
 
   Promise.all([

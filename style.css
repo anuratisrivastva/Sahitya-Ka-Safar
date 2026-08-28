@@ -173,7 +173,7 @@ html, body {
 
 .info-btn {
   position: absolute;
-  top: 1.2rem;
+  bottom: 1.2rem;
   right: 1.2rem;
   z-index: 31;
   font-family: 'Roboto Serif', serif;
@@ -296,15 +296,23 @@ html, body {
 
 .info-card {
   width: min(340px, 88vw);
-  text-align: left;
+  text-align: center;
 }
 
-.info-card h2 {
-  font-family: 'Roboto Serif', serif;
-  font-weight: 600;
-  font-size: 1.15rem;
+.info-card .info-title {
+  font-family: 'MedievalSharp', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
   color: var(--maroon-deep);
-  margin: 0 0 0.6rem;
+  margin: 0;
+}
+
+.info-card .info-tagline {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: 0.15rem 0 1rem;
 }
 
 .info-card p {
@@ -312,6 +320,19 @@ html, body {
   font-size: 0.95rem;
   line-height: 1.55;
   color: var(--ink);
+  text-align: left;
+}
+
+.info-card .info-signature {
+  margin-top: 1rem;
+  text-align: right;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.info-card .info-signature a {
+  font-style: normal;
 }
 
 .info-card a {
@@ -325,5 +346,6 @@ html, body {
 .info-card a:hover { color: var(--maroon-deep); }
 
 @media (max-width: 640px) {
-  .zoom-controls { top: auto; bottom: 1rem; right: 1rem; }
+  .zoom-controls { top: auto; bottom: 1rem; left: 1rem; right: auto; }
+  .info-btn { bottom: 1rem; right: 1rem; }
 }
