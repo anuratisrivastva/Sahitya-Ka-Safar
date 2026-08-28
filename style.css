@@ -2,7 +2,7 @@
   --parchment: #f3e9d2;
   --parchment-deep: #e8dab3;
   --ocean: #b2d1c6;
-  --ocean-deep: #9bb6ac;
+  --ocean-deep: #a7c4b8;
   --land: #f1e4bf;
   --land-hover: #e8d6a4;
   --ink: #4a3728;
@@ -75,13 +75,10 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--ocean-deep);
+  background-color: var(--ocean);
   background-image:
-    radial-gradient(ellipse 55% 45% at 18% 25%, rgba(227, 238, 232, 0.7) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 55% at 85% 15%, rgba(156, 184, 172, 0.5) 0%, transparent 58%),
-    radial-gradient(ellipse 60% 50% at 70% 78%, rgba(135, 162, 150, 0.45) 0%, transparent 62%),
-    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(207, 225, 216, 0.55) 0%, transparent 58%),
-    radial-gradient(ellipse 65% 55% at 45% 45%, rgba(178, 209, 198, 0.5) 0%, transparent 68%),
+    radial-gradient(ellipse 60% 50% at 25% 28%, rgba(235, 243, 239, 0.45) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 78% 72%, rgba(196, 217, 207, 0.35) 0%, transparent 65%),
     linear-gradient(160deg, var(--ocean) 0%, var(--ocean-deep) 100%);
 }
 
@@ -90,7 +87,7 @@ html, body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.35;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.6 0.6 0.6 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
