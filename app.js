@@ -11,6 +11,8 @@
   const cardTitle = document.getElementById("card-title");
   const cardAuthor = document.getElementById("card-author");
   const cardPlace = document.getElementById("card-place");
+  const cardRating = document.getElementById("card-rating");
+  const cardReview = document.getElementById("card-review");
   const counterEl = document.getElementById("counter");
   const banner = document.querySelector(".banner");
   const mapWrap = document.getElementById("map-wrap");
@@ -108,6 +110,20 @@
     cardTitle.textContent = d.book;
     cardAuthor.textContent = d.author_display || d.author;
     cardPlace.textContent = [d.region, d.country].filter(Boolean).join(" · ");
+
+    if (d.rating) {
+      cardRating.textContent = "★".repeat(d.rating) + "☆".repeat(5 - d.rating);
+      cardRating.classList.remove("hidden");
+    } else {
+      cardRating.classList.add("hidden");
+    }
+
+    if (d.review) {
+      cardReview.textContent = d.review;
+      cardReview.classList.remove("hidden");
+    } else {
+      cardReview.classList.add("hidden");
+    }
 
     if (d.cover_url) {
       cardCover.src = d.cover_url;

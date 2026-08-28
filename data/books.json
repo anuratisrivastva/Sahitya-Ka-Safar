@@ -36,7 +36,9 @@
     "lon": 139.325,
     "cover_url": null,
     "description": "The Housekeeper and the Professor by Yōko Ogawa, from Japan.",
-    "description_source": "generated"
+    "description_source": "generated",
+    "rating": 5,
+    "review": "Beautiful, heartwarming book, full of hope, love and awe for the world, and of course, numbers. This could have easily been a grim and depressing book about an old man whose memory runs on a stopwatch of eighty minutes."
   },
   {
     "id": 3,

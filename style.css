@@ -365,6 +365,27 @@ html, body {
   color: var(--ink-soft);
 }
 
+.card-rating {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.card-rating.hidden { display: none; }
+
+.card-review {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--parchment-deep);
+  padding-top: 0.5rem;
+}
+
+.card-review.hidden { display: none; }
+
 .info-card {
   width: min(420px, 90vw);
   text-align: center;
