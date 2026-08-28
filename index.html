@@ -11,8 +11,18 @@
 </head>
 <body>
 
+<div class="page-frame" aria-hidden="true">
+  <svg class="frame-star frame-star-tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.2 9.8 L24 12 L14.2 14.2 L12 24 L9.8 14.2 L0 12 L9.8 9.8 Z" /></svg>
+  <svg class="frame-star frame-star-tr" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.2 9.8 L24 12 L14.2 14.2 L12 24 L9.8 14.2 L0 12 L9.8 9.8 Z" /></svg>
+</div>
+
 <header class="banner">
-  <h1>Sahitya Ka Safar</h1>
+  <div class="banner-weathering" aria-hidden="true"></div>
+  <div class="title-row">
+    <svg class="vine" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 10 Q11 2 19 10 Q27 18 35 10" /><circle cx="35" cy="10" r="1.6" /></svg>
+    <h1>Sahitya Ka Safar</h1>
+    <svg class="vine vine-flip" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 10 Q11 2 19 10 Q27 18 35 10" /><circle cx="35" cy="10" r="1.6" /></svg>
+  </div>
   <p class="tagline">Travel the world through books</p>
   <div class="counter" id="counter">Countries: — · Books: —</div>
 </header>
@@ -34,6 +44,7 @@
 <div id="overlay" class="overlay hidden"></div>
 
 <aside id="book-card" class="book-card hidden">
+  <svg class="bookmark-badge" viewBox="0 0 22 30" aria-hidden="true"><path d="M0 0 H22 V26 L11 19 L0 26 Z" /></svg>
   <button class="close-btn" data-close aria-label="Close">×</button>
   <div class="cover-wrap">
     <img id="card-cover" alt="" />
