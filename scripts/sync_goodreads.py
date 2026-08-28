@@ -26,6 +26,7 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parent.parent
 CSV_PATH = ROOT / "data" / "books_map.csv"
 CACHE_PATH = ROOT / "data" / "api_cache.json"
+NEW_BOOKS_PATH = ROOT / "data" / "new_from_goodreads.md"
 
 GOODREADS_USER = "9952703-anurati"
 SHELF = "read"
@@ -144,8 +145,22 @@ def main():
     print(f"  of which {matched_with_review} had a written review")
     print(f"Unmatched on the map: {len(rows) - matched}")
 
-    unmatched_gr = sum(1 for k in gr_by_title if k not in {normalize_title(r['book']) for r in rows})
-    print(f"Goodreads items with no corresponding row in books_map.csv: {unmatched_gr}")
+    csv_keys = {normalize_title(r["book"]) for r in rows}
+    new_books = []
+    for key, candidates in gr_by_title.items():
+        if key not in csv_keys:
+            new_books.append(candidates[0])  # one representative if duplicates
+
+    print(f"\nOn Goodreads but not yet on the map: {len(new_books)}")
+    lines = ["# New books on Goodreads, not yet on the map", ""]
+    for b in sorted(new_books, key=lambda b: b["title"]):
+        stars = f"{b['rating']}★" if b["rating"] else "unrated"
+        has_review = " (has a written review)" if b["review"] else ""
+        line = f"- **{b['title']}** — {b['author']} — {stars}{has_review}"
+        print(f"  {line[2:]}")
+        lines.append(line)
+    NEW_BOOKS_PATH.write_text("\n".join(lines))
+    print(f"\nFull list written to {NEW_BOOKS_PATH.name}")
 
 
 if __name__ == "__main__":
