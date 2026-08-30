@@ -37,6 +37,11 @@ html, body {
   padding: 1.2rem 1rem 0.9rem;
   background: linear-gradient(var(--parchment) 80%, rgba(243, 233, 210, 0));
   box-shadow: 0 2px 10px var(--shadow);
+  transition: box-shadow 0.2s ease;
+}
+
+body.modal-open .banner {
+  box-shadow: none;
 }
 
 .banner-weathering {

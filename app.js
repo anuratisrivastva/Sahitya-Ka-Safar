@@ -88,6 +88,7 @@
   function closeModal() {
     if (activeModal) activeModal.classList.add("hidden");
     overlay.classList.add("hidden");
+    document.body.classList.remove("modal-open");
     activeModal = null;
     if (activeMarker) {
       activeMarker.classList.remove("active");
@@ -100,6 +101,7 @@
     activeModal = el;
     el.classList.remove("hidden");
     overlay.classList.remove("hidden");
+    document.body.classList.add("modal-open");
   }
 
   function showCard(d, node) {
