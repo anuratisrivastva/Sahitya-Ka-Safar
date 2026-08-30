@@ -120,13 +120,14 @@ html, body {
     radial-gradient(ellipse 60% 50% at 25% 28%, rgba(235, 243, 239, 0.45) 0%, transparent 65%),
     radial-gradient(ellipse 55% 50% at 78% 72%, rgba(196, 217, 207, 0.35) 0%, transparent 65%),
     linear-gradient(160deg, var(--ocean) 0%, var(--ocean-deep) 100%);
-  background-size: 160% 160%;
-  animation: waterDrift 50s ease-in-out infinite alternate;
+  background-size: 220% 220%;
+  animation: waterDrift 18s ease-in-out infinite alternate;
 }
 
 @keyframes waterDrift {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
+  0% { background-position: 0% 20%; }
+  50% { background-position: 100% 80%; }
+  100% { background-position: 40% 0%; }
 }
 
 #map-wrap::before {
