@@ -38,6 +38,10 @@ html, body {
   background: linear-gradient(var(--parchment) 80%, rgba(243, 233, 210, 0));
 }
 
+body.modal-open .banner {
+  background: var(--parchment);
+}
+
 .banner-weathering {
   position: absolute;
   inset: 0;
