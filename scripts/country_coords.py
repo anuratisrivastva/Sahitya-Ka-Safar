@@ -44,6 +44,7 @@ COUNTRY_COORDS = {
     "Afghanistan": (33.9, 67.7),
     "Brazil": (-14.2, -51.9),
     "Sri Lanka": (7.9, 80.8),
+    "Antigua": (17.06, -61.80),
     "Taiwan": (23.7, 121.0),
 }
 

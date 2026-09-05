@@ -1737,5 +1737,11 @@
     "description": "White lies. Dark humor.",
     "description_source": "openlibrary",
     "rating": 4
+  },
+  "A Small Place|Kincaid, Jamaica": {
+    "cover_url": "https://covers.openlibrary.org/b/id/225053-M.jpg?default=false",
+    "description": "As she bears witness to the sweeping corruption, dilapidated buildings and shameful legacy of Antigua's colonial past, Kincaid compels us to think about the people behind the beautiful landscape of this tiny island.",
+    "description_source": "openlibrary",
+    "rating": 4
   }
 }

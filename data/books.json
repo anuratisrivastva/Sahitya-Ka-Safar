@@ -3993,5 +3993,19 @@
     "description": "Bodies & Boundaries by Kavindya Thennakoon, from Sri Lanka.",
     "description_source": "generated",
     "rating": 5
+  },
+  {
+    "id": 282,
+    "book": "A Small Place",
+    "author": "Kincaid, Jamaica",
+    "author_display": "Jamaica Kincaid",
+    "country": "Antigua",
+    "region": "",
+    "lat": 17.06,
+    "lon": -61.8,
+    "cover_url": "https://covers.openlibrary.org/b/id/225053-M.jpg?default=false",
+    "description": "As she bears witness to the sweeping corruption, dilapidated buildings and shameful legacy of Antigua's colonial past, Kincaid compels us to think about the people behind the beautiful landscape of this tiny island.",
+    "description_source": "openlibrary",
+    "rating": 4
   }
 ]
