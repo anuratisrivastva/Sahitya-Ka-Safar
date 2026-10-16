@@ -1,6 +1,6 @@
 # Review flags
 
-Generated (not API-sourced) descriptions: 134
+Generated (not API-sourced) descriptions: 136
 Missing covers: 44
 
 ## Generated descriptions (check tone/accuracy)
@@ -139,6 +139,8 @@ Missing covers: 44
 - **The Paradise of Food** by Khalid Jawed — _The Paradise of Food by Khalid Jawed, from Delhi._
 - **Let's talk Feelings** by Kavindya Thennakoon — _Let's talk Feelings by Kavindya Thennakoon, from Sri Lanka._
 - **Bodies & Boundaries** by Kavindya Thennakoon — _Bodies & Boundaries by Kavindya Thennakoon, from Sri Lanka._
+- **Small Comfort** by Ia Genberg — _Small Comfort by Ia Genberg, from Sweden._
+- **When We Were Birds** by Ayanna Lloyd Banwo — _When We Were Birds by Ayanna Lloyd Banwo, from Trinidad and Tobago._
 
 ## Missing covers
 

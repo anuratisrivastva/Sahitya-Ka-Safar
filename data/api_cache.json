@@ -2,7 +2,9 @@
   "A Pleasant Kind Of Heavy|Aranyani": {
     "cover_url": null,
     "description": null,
-    "description_source": null
+    "description_source": null,
+    "rating": 4,
+    "review": "An enjoyable collection of literary erotica that straddles the often forgotten area of desire and female sexuality within the Indian context. Extremely well-written, bold, and unique stories."
   },
   "A Prayer for the Crown-Shy (Monk & Robot, #2)|Chambers, Becky": {
     "cover_url": "https://covers.openlibrary.org/b/id/12860009-M.jpg?default=false",
@@ -97,7 +99,8 @@
   "Ada Twist, Scientist|Beaty, Andrea": {
     "cover_url": "https://covers.openlibrary.org/b/id/14304005-M.jpg?default=false",
     "description": "Ada Twist, Scientist is a 2016 children's picture book written by Andrea Beaty and illustrated by David Roberts.",
-    "description_source": "openlibrary"
+    "description_source": "openlibrary",
+    "rating": 5
   },
   "Ariel|Plath, Sylvia": {
     "cover_url": "https://covers.openlibrary.org/b/id/33279-M.jpg?default=false",
@@ -238,7 +241,8 @@
   "Clarkesworld Magazine Issue 100|Clarke, Neil": {
     "cover_url": "https://covers.openlibrary.org/b/id/13282335-M.jpg?default=false",
     "description": null,
-    "description_source": null
+    "description_source": null,
+    "rating": 4
   },
   "Come September|Roy, Arundhati": {
     "cover_url": "https://covers.openlibrary.org/b/id/948097-M.jpg?default=false",
@@ -255,7 +259,9 @@
   "Chouboli & Other Stories|Detha, Vijaydan": {
     "cover_url": null,
     "description": null,
-    "description_source": null
+    "description_source": null,
+    "rating": 5,
+    "review": "What a beautiful collection of short stories by the brilliant & irreverent Detha! The stories are encased in a lovely cover with the most elegant illustrations to complement the text. This book is a keeper!"
   },
   "Convenience Store Woman|Murata, Sayaka": {
     "cover_url": "https://covers.openlibrary.org/b/id/9315164-M.jpg?default=false",
@@ -426,7 +432,8 @@
   "Franz Kafka Complete Short Stories|Kafka, Franz": {
     "cover_url": "https://covers.openlibrary.org/b/id/4216964-M.jpg?default=false",
     "description": "This collection of new translations brings together the small proportion of Kafka's works that he thought worthy of publication.",
-    "description_source": "openlibrary"
+    "description_source": "openlibrary",
+    "rating": 5
   },
   "Ghachar Ghochar|Shanbhag, Vivek": {
     "cover_url": "https://covers.openlibrary.org/b/id/13502048-M.jpg?default=false",
@@ -566,7 +573,8 @@
   "Iggy Peck, Architect|Beaty, Andrea": {
     "cover_url": "https://covers.openlibrary.org/b/id/14380179-M.jpg?default=false",
     "description": "Meet Iggy Peck—creative, independent, and not afraid to express himself! In the spirit of David Shannon’s No, David and Rosemary Wells’s Noisy Nora, Iggy Peck will delight readers looking for irreverent, inspired fun.",
-    "description_source": "openlibrary"
+    "description_source": "openlibrary",
+    "rating": 5
   },
   "I'm a Fan|Patel, Sheena": {
     "cover_url": "https://covers.openlibrary.org/b/id/13849156-M.jpg?default=false",
@@ -932,7 +940,9 @@
   "Rubaiyat of Omar Khayyam|Khayyam, Omar": {
     "cover_url": "https://covers.openlibrary.org/b/id/182302-M.jpg?default=false",
     "description": "Blue/Green Hardcover, pasted illustrations believed to be done by Willy Pogany, no pub. date, Thomas Crowell New York.",
-    "description_source": "openlibrary"
+    "description_source": "openlibrary",
+    "rating": 5,
+    "review": "How do you write the review of a book whose every word you wish to etch into your cold steel heart?"
   },
   "Queen of Babble|Cabot, Meg": {
     "cover_url": "https://covers.openlibrary.org/b/id/2387914-M.jpg?default=false",
@@ -1385,7 +1395,9 @@
   "The Melancholy Death of Oyster Boy|Burton, Tim": {
     "cover_url": "https://covers.openlibrary.org/b/id/978847-M.jpg?default=false",
     "description": null,
-    "description_source": null
+    "description_source": null,
+    "rating": 5,
+    "review": "Whacky, quirky, beautiful!"
   },
   "The Nose|Gogol, Nikolai": {
     "cover_url": "https://covers.openlibrary.org/b/id/430642-M.jpg?default=false",
@@ -1423,7 +1435,8 @@
   "The Myth of Sisyphus|Camus, Albert": {
     "cover_url": "https://covers.openlibrary.org/b/id/12726570-M.jpg?default=false",
     "description": null,
-    "description_source": null
+    "description_source": null,
+    "rating": 5
   },
   "The O. Henry Prize Stories 2002|Dark, Larry": {
     "cover_url": "https://covers.openlibrary.org/b/id/6546657-M.jpg?default=false",
@@ -1586,7 +1599,8 @@
   "The Women Who Forgot to Invent Facebook|Susan, Nisha": {
     "cover_url": null,
     "description": null,
-    "description_source": null
+    "description_source": null,
+    "rating": 1
   },
   "The Woman in the Dunes|Abe, Kōbō": {
     "cover_url": "https://covers.openlibrary.org/b/id/10836985-M.jpg?default=false",
@@ -1743,5 +1757,25 @@
     "description": "As she bears witness to the sweeping corruption, dilapidated buildings and shameful legacy of Antigua's colonial past, Kincaid compels us to think about the people behind the beautiful landscape of this tiny island.",
     "description_source": "openlibrary",
     "rating": 4
+  },
+  "Oranges Are Not the Only Fruit|Winterson, Jeanette": {
+    "cover_url": "https://covers.openlibrary.org/b/id/10369574-M.jpg?default=false",
+    "description": "This is the story of Jeanette, adopted and brought up by her mother as one of God's elect. Zealous and passionate, she seems destined for life as a missionary, but then she falls for one of her converts.",
+    "description_source": "openlibrary",
+    "rating": 4
+  },
+  "When We Were Birds|Banwo, Ayanna Lloyd": {
+    "cover_url": "https://covers.openlibrary.org/b/id/12675034-M.jpg?default=false",
+    "description": null,
+    "description_source": null,
+    "rating": 2,
+    "review": "I desperately wanted to like this book. Loved the premise and the setup, and I was really excited for the book, this being my first book by an author from Trinidad and Tobago. A few things went horribly wrong in this novel putting the brakes on even the strongest desires of liking this book:\n1. The two main protagonists meet only at the 65% mark of the book. It's pure world building till then. And at the heart of it, this is a romance novel. How frustrating!\n2. The crime angle with the colleagues is a layer that is unwelcome and isn't fully explored emotionally. How did they get into this? What circumstances drove them? It completely overshadows the more interesting parts on the tension carried by Darwin on being a Rasta who deals with the dead and his relationship with his mom or how does Yejide experience the dead and does it shift how she saw her mother when she was alive?\n3. Caveat, I do not like romance novels. But at least the book could have built in romantic tension, instead of the two being head over heels at first sight. I was hoping that Darwin had been dead all along and that could have been a more interesting twist.\n4. The magical realism is used as an ex machina device to neatly wrap up the crime subplot. How. Very. Convenient. \n\nNonetheless, this is a debut novel and despite its flaws I hope the writer keeps writing and works on her craft to deliver books that live up to the premise."
+  },
+  "Small Comfort|Genberg, Ia": {
+    "cover_url": "https://covers.openlibrary.org/b/id/15205241-M.jpg?default=false",
+    "description": null,
+    "description_source": null,
+    "rating": 3,
+    "review": "Intriguing collection of short stories, they're supposed to be interconnected although I couldn't figure out how apart from the theme of money. What stands out is that each story is written in a distinct format, including an interview, letters, research paper. My favourite one was the research on an adapted monopoly board game and the impact of increase in perceived wealth on human behaviour. The rest were a bit mediocre, or perhaps something was lost in translation."
   }
 }

@@ -18,6 +18,7 @@ import html
 import json
 import re
 import time
+import unicodedata
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -54,10 +55,27 @@ def clean_review(raw: str) -> str:
 
 
 def normalize_title(title: str) -> str:
-    title = re.sub(r"\s*\([^)]*\)\s*$", "", title)  # drop trailing series info
+    title = unicodedata.normalize("NFKD", title)
+    title = "".join(c for c in title if not unicodedata.combining(c))  # accents
+    title = re.split(r"\s\(", title)[0]  # drop "(Series, #N)" incl. nested parens
     title = title.split(":")[0]  # drop ": subtitle" (editions often add one)
     title = re.sub(r"[‘’'`]", "", title)  # curly vs straight apostrophes
-    return re.sub(r"\s+", " ", title).strip().lower()
+    title = re.sub(r",?\s+and other \w+.*$", "", title, flags=re.I)  # "and Other Stories"
+    title = re.sub(r",?\s+vol\.?\s*\w+$", "", title, flags=re.I)  # ", Vol I"
+    title = re.sub(r"[^a-z0-9]+", " ", title.lower())
+    return " ".join(w for w in title.split() if w != "the")
+
+
+def find_candidates(key: str, gr_by_title: dict, csv_last_name: str):
+    """Exact normalized match, else a prefix match (one title extends the other)
+    confirmed by author last name, e.g. 'Clarkesworld Magazine Issue 100'."""
+    if key in gr_by_title:
+        return gr_by_title[key]
+    out = []
+    for gk, items in gr_by_title.items():
+        if len(key) >= 8 and len(gk) >= 8 and (gk.startswith(key + " ") or key.startswith(gk + " ")):
+            out.extend(i for i in items if csv_last_name and csv_last_name in i["author"].lower())
+    return out
 
 
 def fetch_all_goodreads_items():
@@ -113,12 +131,12 @@ def main():
     matched_with_review = 0
     for row in rows:
         key = normalize_title(row["book"])
-        candidates = gr_by_title.get(key)
+        csv_last_name = row["author"].split(",")[0].strip().lower()
+        candidates = find_candidates(key, gr_by_title, csv_last_name)
         if not candidates:
             continue
 
         # Disambiguate same-title matches by author last name.
-        csv_last_name = row["author"].split(",")[0].strip().lower()
         chosen = candidates[0]
         if len(candidates) > 1:
             for c in candidates:
