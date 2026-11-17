@@ -1,6 +1,6 @@
 # Review flags
 
-Generated (not API-sourced) descriptions: 136
+Generated (not API-sourced) descriptions: 137
 Missing covers: 44
 
 ## Generated descriptions (check tone/accuracy)
@@ -141,6 +141,7 @@ Missing covers: 44
 - **Bodies & Boundaries** by Kavindya Thennakoon — _Bodies & Boundaries by Kavindya Thennakoon, from Sri Lanka._
 - **Small Comfort** by Ia Genberg — _Small Comfort by Ia Genberg, from Sweden._
 - **When We Were Birds** by Ayanna Lloyd Banwo — _When We Were Birds by Ayanna Lloyd Banwo, from Trinidad and Tobago._
+- **Jasmine Days** by Benyamin — _Jasmine Days by Benyamin, from Bahrain._
 
 ## Missing covers
 
