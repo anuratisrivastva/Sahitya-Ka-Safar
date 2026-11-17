@@ -114,7 +114,9 @@
     cardPlace.textContent = [d.region, d.country].filter(Boolean).join(" · ");
 
     if (d.rating) {
-      cardRating.textContent = "★".repeat(d.rating) + "☆".repeat(5 - d.rating);
+      cardRating.textContent = "☆☆☆☆☆";
+      cardRating.style.setProperty("--fill", `${(d.rating / 5) * 100}%`);
+      cardRating.setAttribute("aria-label", `${d.rating} out of 5`);
       cardRating.classList.remove("hidden");
     } else {
       cardRating.classList.add("hidden");

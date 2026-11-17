@@ -1781,6 +1781,14 @@
   "Jasmine Days|Benyamin": {
     "cover_url": "https://covers.openlibrary.org/b/id/10796205-M.jpg?default=false",
     "description": null,
-    "description_source": null
+    "description_source": null,
+    "rating": 3.75
+  },
+  "The Correspondent|Evans, Virginia": {
+    "cover_url": "https://covers.openlibrary.org/b/id/15254278-M.jpg?default=false",
+    "description": "Throughout her life Sybil Van Antwerp has used letters to make sense of the world and her place in it.",
+    "description_source": "openlibrary",
+    "rating": 4.25,
+    "review": "Heartwarming book, unputdownable."
   }
 }

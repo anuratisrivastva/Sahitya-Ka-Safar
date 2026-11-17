@@ -383,6 +383,20 @@ body.modal-open .banner {
   font-size: 1rem;
   letter-spacing: 0.15em;
   color: var(--gold);
+  position: relative;
+  width: fit-content;
+}
+
+/* Filled stars overlaid on the outlines, clipped to rating/5 so
+   fractional ratings (3.75, 4.25) show partial fill. */
+.card-rating::before {
+  content: "★★★★★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--fill, 0%);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .card-rating.hidden { display: none; }
